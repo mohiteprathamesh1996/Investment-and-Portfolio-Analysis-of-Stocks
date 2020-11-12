@@ -98,7 +98,7 @@ def news_table(finviz_url, tickers):
     
     return df.groupby(["Ticker","Timestamp"]).mean().unstack().xs("compound", axis="columns").transpose()
 
-st.markdown("Live Sentiment tracker *[source: finviz.com]*")
+st.markdown("Live Compound Sentiment tracker *[source: finviz.com]*")
 
 sent_df = news_table(finviz_url, tickers=["{}".format(tickers)])
 
